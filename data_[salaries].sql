@@ -1,8 +1,8 @@
 -- make sure we are updating the employees schema
 USE employees;
 
--- clear the table of any existing data
-TRUNCATE TABLE `salaries`;
+-- turn off key checks whilst we add the data
+SET FOREIGN_KEY_CHECKS = 0;
 
 -- insert some data
 INSERT INTO `salaries` VALUES (10001,60117,'1986-06-26','1987-06-26'),
@@ -53230,3 +53230,6 @@ INSERT INTO `salaries` VALUES (15373,62167,'1997-10-24','1998-10-24'),
 (15600,66195,'2000-04-22','2001-04-22'),
 (15600,67533,'2001-04-22','2002-04-22'),
 (15600,67316,'2002-04-22','9999-01-01');
+
+-- turn foreign key checks back on
+SET FOREIGN_KEY_CHECKS = 1;

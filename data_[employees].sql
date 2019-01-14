@@ -1,8 +1,8 @@
 -- make sure we are updating the employees schema
 USE employees;
 
--- clear the table of any existing data
-TRUNCATE TABLE `employees`;
+-- turn off key checks whilst we add the data
+SET FOREIGN_KEY_CHECKS = 0;
 
 -- insert some data
 INSERT INTO `employees` VALUES (10001,'1953-09-02','Georgi','Facello','M','1986-06-26'),
@@ -5605,3 +5605,6 @@ INSERT INTO `employees` VALUES (10001,'1953-09-02','Georgi','Facello','M','1986-
 (15598,'1960-10-26','Kristinn','Kemmerer','M','1986-10-07'),
 (15599,'1964-11-23','Filipe','Piancastelli','M','1987-02-16'),
 (15600,'1954-01-17','Mack','Perna','M','1985-04-26');
+
+-- turn foreign key checks back on
+SET FOREIGN_KEY_CHECKS = 1;

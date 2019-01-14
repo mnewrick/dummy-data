@@ -1,8 +1,8 @@
 -- make sure we are updating the employees schema
 USE employees;
 
--- clear the table of any existing data
-TRUNCATE TABLE `departments`;
+-- turn off key checks whilst we add the data
+SET FOREIGN_KEY_CHECKS = 0;
 
 INSERT INTO `departments` VALUES 
 ('d001','Marketing'),
@@ -14,3 +14,6 @@ INSERT INTO `departments` VALUES
 ('d007','Sales'),
 ('d008','Research'),
 ('d009','Customer Service');
+
+-- turn foreign key checks back on
+SET FOREIGN_KEY_CHECKS = 1;

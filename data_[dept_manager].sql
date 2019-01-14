@@ -1,8 +1,8 @@
 -- make sure we are updating the employees schema
 USE employees;
 
--- clear the table of any existing data
-TRUNCATE TABLE `dept_manager`;
+-- turn off key checks whilst we add the data
+SET FOREIGN_KEY_CHECKS = 0;
 
 -- insert some data
 INSERT INTO `dept_manager` VALUES 
@@ -30,3 +30,6 @@ INSERT INTO `dept_manager` VALUES
 (111784,'d009','1988-10-17','1992-09-08'),
 (111877,'d009','1992-09-08','1996-01-03'),
 (111939,'d009','1996-01-03','9999-01-01');
+
+-- turn foriegn key checks back on
+SET FOREIGN_KEY_CHECKS = 1;
